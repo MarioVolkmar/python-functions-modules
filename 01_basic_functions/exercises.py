@@ -79,4 +79,118 @@ def area_rec(a,b):
 
 print(area_rec(6,5))
 
-## 
+## Calcular promedio de tres notas
+
+def prom(n1,n2,n3):
+    promedio = (n1 + n2 + n3)/3
+    return promedio
+
+print(prom(5,6,8))
+
+## Determinar estado de una nota
+
+def evaluador(nota):
+    if nota >= 3:
+        return True
+    else:
+        return False
+    
+print(evaluador(2.9))
+
+## Normalizar nombre
+
+def normalizador(nombre):
+    nombre = nombre.strip().title().split()
+    nombre = " ".join(nombre)
+    return nombre
+
+print(normalizador("   mArIo   vOLkMaR   "))
+
+## Contar vocales
+
+def c_vocales(texto):
+    vocales = "aeiou"
+    res = 0
+    for l in texto:
+        if l.lower() in vocales:
+            res += 1
+    return res
+
+print(c_vocales("Contar vocales"))
+
+## Contar consonantes
+
+def c_consonantes(texto):
+    vocales = "aeiou"
+    letras = "qwertyuiopasdfghjklñzxcvbnm"
+    res = 0
+    for l in texto:
+        if l.lower() in letras and l.lower() not in vocales:
+            res += 1
+    return res
+
+print(c_consonantes("qwertyuiopasdfghjklñzxcvbnm"))
+
+## Invertir texto
+
+def invertir(texto):
+    return texto[::-1]
+
+print(invertir("Hola"))
+
+## Validar email simple
+
+def validar_email(e):
+    e = e.strip()
+    if e[0] == "@" or e[-1] == "@":
+        return False
+    elif "." not in e:
+        return False
+    elif "@" not in e:
+        return False
+    else:
+        return True
+    
+print(validar_email("das@f.sco"))
+
+## Crear slug
+
+def slug (texto):
+    texto = texto.strip().lower().split()
+    texto = "-".join(texto)
+    return texto
+
+print(slug("Curso de Python Backend"))
+
+## Calcular total de carrito
+
+carrito = [
+    {"producto": "Mouse", "precio": 80000, "cantidad": 2},
+    {"producto": "Teclado", "precio": 120000, "cantidad": 1},
+    {"producto": "Monitor", "precio": 900000, "cantidad": 1}
+]
+
+def c_total (lista):
+    total = 0
+    for p in lista:
+        total += (p["precio"] * p["cantidad"])
+    return total
+
+print(c_total(carrito))
+
+## Buscar producto por nombre
+
+productos = [
+    {"nombre": "Laptop", "precio": 2500000, "stock": 3},
+    {"nombre": "Mouse", "precio": 80000, "stock": 10},
+    {"nombre": "Teclado", "precio": 120000, "stock": 5}
+]
+
+def busqueda_prod (lista, nombre):
+    for p in lista:
+        if p["nombre"].lower() == nombre.lower():
+            return p
+    else:
+        return "None"
+    
+print(busqueda_prod(productos, "mose"))
