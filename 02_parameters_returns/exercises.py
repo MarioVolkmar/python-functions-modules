@@ -26,12 +26,12 @@ def calcular_subtotal(precio, cantidad):
 ## Calcular total con descuento e IVA
 
 def calcular_total(precio, cantidad, descuento = 0, iva = 19):
-    return (precio * cantidad) * (100 + iva - descuento) / 100
+    return (precio * cantidad) * (100 + iva) / 100 * (100 - descuento) / 100
 
 ## Validar edad
 
 def validar_edad (edad, edad_min = 18):
-    return edad > edad_min
+    return edad >= edad_min
 
 ##  Clasificar usuario por edad
 
@@ -52,7 +52,7 @@ def clasificar_edad (edad):
 def calificar_nota (nota, nota_min = 3):
     if nota < 0 or nota > 5:
         return "Invalida"
-    elif nota >= 3:
+    elif nota >= nota_min:
         return "Aprobado"
     else:
         return "Reprobado"
@@ -69,8 +69,7 @@ def normalizador (texto, formato = "lower"):
     elif formato.lower() == "title":
         texto = texto.title()
     else:
-        print("Error input")
-        return
+        return texto
     return texto
 
 print(normalizador("   mArIo vOLkMaR   ", "upper"))
@@ -102,7 +101,13 @@ def calcular_estadisticas (numeros):
     promedio = suma / cantidad
     mayor = max(numeros)
     menor = min(numeros)
-    return (cantidad, suma, promedio, mayor, menor)
+    return {
+        "cantidad": cantidad,
+        "suma": suma,
+        "promedio": promedio,
+        "mayor": mayor,
+        "menor": menor
+    }
 
 ## Filtrar números mayores a un límite
 
