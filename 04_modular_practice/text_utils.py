@@ -12,7 +12,7 @@ def contar_vocales(texto):
     vocales = "aeiou"
     res = 0
     for t in texto:
-        if t in vocales:
+        if t.lower() in vocales:
             res += 1
     return res
 
@@ -21,7 +21,7 @@ def contar_consonantes(texto):
     letras = "qwertyuiopasdfghjklñzxcvbnm"
     res = 0
     for t in texto:
-        if t in letras and t not in vocales:
+        if t.lower() in letras and t.lower() not in vocales:
             res += 1
     return res
 

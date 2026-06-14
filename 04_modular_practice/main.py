@@ -1,4 +1,4 @@
-from calculator import sumar, dividir, promedio
+from calculator import sumar, dividir, calcular_promedio
 from text_utils import normalizar_nombre, crear_slug
 from list_utils import eliminar_duplicados, filtrar_pares
 from inventory import buscar_producto, registrar_venta, calcular_valor_inventario
@@ -7,7 +7,7 @@ from inventory import buscar_producto, registrar_venta, calcular_valor_inventari
 
 print(sumar(5, 3))
 print(dividir(10, 2))
-print(promedio([4, 5, 3]))
+print(calcular_promedio([4, 5, 3]))
 
 print(normalizar_nombre("   mArIo   vOLkMaR   "))
 print(crear_slug("Curso de Python Backend"))

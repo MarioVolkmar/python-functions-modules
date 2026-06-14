@@ -12,7 +12,7 @@ def dividir(a,b):
         return None
     return a/b
 
-def promedio(numeros):
+def calcular_promedio(numeros):
     if len(numeros) == 0:
         return None
     return sum(numeros) / len(numeros)

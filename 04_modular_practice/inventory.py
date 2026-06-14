@@ -29,7 +29,7 @@ def actualizar_stock(productos, nombre_producto, nuevo_stock):
         return False
 
 def registrar_venta(productos, nombre_producto, cantidad):
-    if cantidad < 0:
+    if cantidad <= 0:
         return "Cantidad invalida"
     for p in productos:
         if p["nombre"].lower() == nombre_producto.strip().lower():
