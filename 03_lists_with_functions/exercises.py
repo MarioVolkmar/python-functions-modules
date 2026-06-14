@@ -169,7 +169,7 @@ def filtrar_disponibles(productos):
 def calcular_valor_inventario(productos):
     total = 0
     for p in productos:
-        total += p["precio"] + p["stock"]
+        total += p["precio"] * p["stock"]
     return total
 
 ## Actualizar stock de producto
