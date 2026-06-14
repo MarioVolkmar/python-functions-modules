@@ -79,4 +79,108 @@ def obtener_menor(numeros):
                 menor = n
         return menor
     
-## 
+## Filtrar números pares
+
+def filtrar_pares(numeros):
+    res = []
+    for n in numeros:
+        if n % 2 == 0:
+            res.append(n)
+    return res
+
+## Separar pares e impares
+
+def separar_pares_impares(numeros):
+    pares = []
+    impares = []
+    for n in numeros:
+        if n % 2 == 0:
+            pares.append(n)
+        else:
+            impares.append(n)
+    return {
+        "pares" : pares,
+        "impares" : impares
+    }
+
+## Eliminar duplicados manteniendo orden
+
+def eliminar_duplicados(lista):
+    res = []
+    for e in lista:
+        if e not in res:
+            res.append(e)
+    return res
+
+## Contar apariciones
+
+def contar_apariciones(lista, elemento):
+    res = 0
+    for e in lista:
+        if e == elemento:
+            res += 1
+    return res
+
+## Filtrar palabras largas
+
+def filtrar_palabras_largas(palabras, longitud_minima=5):
+    res = []
+    for p in palabras:
+        if len(p) >= longitud_minima:
+            res.append(p)
+    return res
+
+## Normalizar lista de nombres
+
+def normalizar_nombres(nombres):
+    res = []
+    for n in nombres:
+        n = n.strip().title().split()
+        n = " ".join(n)
+        res.append(n)
+    return res
+
+## Buscar producto por nombre
+
+productos = [
+    {"nombre": "Laptop", "precio": 2500000, "stock": 3},
+    {"nombre": "Mouse", "precio": 80000, "stock": 10},
+    {"nombre": "Teclado", "precio": 120000, "stock": 0}
+]
+
+def buscar_producto(productos, nombre_buscado):
+    for p in productos:
+        if p["nombre"].lower() == nombre_buscado.lower():
+            return p
+    else:
+        return None
+    
+## Filtrar productos disponibles
+
+def filtrar_disponibles(productos):
+    res = []
+    for p in productos:
+        if p["stock"] > 0:
+            res.append(p)
+    return res
+
+## Calcular valor total del inventario
+
+def calcular_valor_inventario(productos):
+    total = 0
+    for p in productos:
+        total += p["precio"] + p["stock"]
+    return total
+
+## Actualizar stock de producto
+
+def actualizar_stock(productos, nombre_producto, nuevo_stock):
+    if nuevo_stock < 0:
+        return False
+    for p in productos:
+        if p["nombre"].lower() == nombre_producto.lower():
+            p["stock"] = nuevo_stock
+            return True
+    else:
+        return False
+    
